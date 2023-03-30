@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Yugen & Jinqs Mario bros viewing party</title>
+  <style>
+    body {
+      background-image: url('http://4.bp.blogspot.com/_NvrrpaQZaO4/TUGwr9b4eOI/AAAAAAAAAC0/WrDJQBPmkXs/s1600/1.jpg');
+      background-size: cover;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    
+    #countdown {
+      font-size: 50px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    #logo {
+      display: block;
+      margin: 0 auto;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    #logo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>Yugen & Jinqs Mario bros viewing party</h1>
+  <div id="countdown"></div>
+<div id="logo">
+    <img src="https://m.media-amazon.com/images/M/MV5BZmM3M2ZlNzktODhhMC00ZDFjLTg0ZjktYWY5MTgxZjc3ZTA1XkEyXkFqcGdeQXVyODY2MzY0NDE@._V1_.jpg" alt="Logo">
+  </div>
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("April 5, 2023 00:00:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Output the result in an element with id="countdown"
+      document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
